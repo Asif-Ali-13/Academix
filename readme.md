@@ -37,6 +37,8 @@ Instructions to Execute the Code and Reproduce the Results
 
 5. Access the Application:
    - Frontend: http://localhost:5173  
-   - Backend/API: http://localhost:5001  
+   - Backend/API: http://localhost:5001
+     
+
 
 ----------------------------------------------------------
