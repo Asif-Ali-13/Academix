@@ -11,10 +11,6 @@ axiosInstance.interceptors.request.use(
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
-
-    console.dir(config, { depth: null });
-
-    console.log(`hello from axiosInstance : `, JSON.stringify(config, null, 2));
     return config;
   },
   (err) => Promise.reject(err)
