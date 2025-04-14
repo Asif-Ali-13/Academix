@@ -5,15 +5,21 @@ Instructions to Execute the Code and Reproduce the Results
    Create a file named `.env` and add the following environment credentials:
 
    PORT=5001  
-   CLIENT_URL=http://localhost:5173  
+   CLIENT_URL=http://localhost:5173
+    
    MONGO_URI=
+   
    CLOUDINARY_CLOUD_NAME=
+   
    CLOUDINARY_API_KEY=
-   CLOUDINARY_API_SECRET= 
+   
+   CLOUDINARY_API_SECRET=
+   
    PAYPAL_CLIENT_ID=
+   
    PAYPAL_SECRET_ID=
 
-2. Set Up the Frontend:
+3. Set Up the Frontend:
    - Open a terminal and navigate to the frontend directory:
      cd client
    - Install dependencies:
@@ -21,7 +27,7 @@ Instructions to Execute the Code and Reproduce the Results
    - Start the development server:
      npm run dev
 
-3. Set Up the Backend:
+4. Set Up the Backend:
    - Open another terminal and navigate to the backend directory:
      cd server
    - Install dependencies:
@@ -29,7 +35,7 @@ Instructions to Execute the Code and Reproduce the Results
    - Start the backend server:
      npm run dev
 
-4. Access the Application:
+5. Access the Application:
    - Frontend: http://localhost:5173  
    - Backend/API: http://localhost:5001  
 
