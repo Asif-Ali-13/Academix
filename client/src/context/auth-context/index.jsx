@@ -14,21 +14,15 @@ export default function AuthProvider({ children }) {
   });
   const [loading, setLoading] = useState(true);
 
-  async function handleRegisterUser(event) {
-    event.preventDefault();
-    const data = await registerService(signUpFormData);
-  }
-
-  async function handleLoginUser(event) {
-    event.preventDefault();
-    const data = await loginService(signInFormData);
-    console.log(data, "datadatadatadatadata");
-
+  async function loginUserLogic(credentials) {
+    const data = await loginService(credentials);
+  
     if (data.success) {
       sessionStorage.setItem(
         "accessToken",
         JSON.stringify(data.data.accessToken)
       );
+      console.log(data.data.user)
       setAuth({
         authenticate: true,
         user: data.data.user,
@@ -39,6 +33,24 @@ export default function AuthProvider({ children }) {
         user: null,
       });
     }
+  }
+  
+  async function handleRegisterUser(event) {
+    event.preventDefault();
+    const data = await registerService(signUpFormData);
+  
+    if (data.success) {
+      // login after registration using the same credentials
+      await loginUserLogic({
+        userEmail: signUpFormData.userEmail,
+        password: signUpFormData.password,
+      });
+    }
+  }
+
+  async function handleLoginUser(event) {
+    event.preventDefault();
+    await loginUserLogic(signInFormData);
   }
 
   //check auth user
